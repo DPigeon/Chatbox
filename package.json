@@ -4,7 +4,7 @@
   "description": "A small chatbox made with gRPC and NodeJS.",
   "main": "Server/Entrypoint.js",
   "scripts": {
-    "start": "node Server/Entrypoint.js",
+    "start": "node App.js",
     "test": "npm test"
   },
   "repository": {

@@ -1,14 +1,15 @@
-/* The entrypoint server that users can use to connect
+/*
+ * The entrypoint server that users can use to connect.
  * We load the proto file, define the useful functions for the server and start the server.
  */
 
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 
-const { SERVER_URL, SERVER_PORT } = require("../env.js");
+const { SERVER_URL, SERVER_PORT } = require("../env");
+const SERVER_ADDRESS = `${SERVER_URL}:${SERVER_PORT}`;
 
 const server = new grpc.Server();
-const SERVER_ADDRESS = `${SERVER_URL}:${SERVER_PORT}`;
 
 let proto = grpc.loadPackageDefinition(
   protoLoader.loadSync("Protos/Chatbox.proto", {
@@ -45,12 +46,17 @@ function broadcastChat(message) {
   });
 }
 
-/* Start the gRPC Server
+/*
+ * Start the gRPC Server
  */
 
-server.addService(proto.chatbox.Chat.service, {
-  JoinServer: JoinServer,
-  SendMessage: SendMessage
-});
-server.bind(SERVER_ADDRESS, grpc.ServerCredentials.createInsecure());
-server.start();
+function startGrpcServer() {
+  server.addService(proto.chatbox.Chat.service, {
+    JoinServer: JoinServer,
+    SendMessage: SendMessage
+  });
+  server.bind(SERVER_ADDRESS, grpc.ServerCredentials.createInsecure());
+  server.start();
+}
+
+module.exports = { startGrpcServer };
