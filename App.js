@@ -4,6 +4,5 @@
 
 const { startGrpcServer } = require("./Server/Entrypoint");
 
-startGrpcServer(() => {
-  console.log("[👨🏼‍💻 <--> 👩🏼‍💻] Chatbox Server Started.");
-});
+startGrpcServer();
+console.log("[👨🏼‍💻 <--> 👩🏼‍💻] Chatbox Server Started.");

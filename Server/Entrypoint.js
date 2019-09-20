@@ -2,7 +2,6 @@
  * The entrypoint server that users can use to connect.
  * We load the proto file, define the useful functions for the server and start the server.
  */
-
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 
@@ -24,18 +23,19 @@ let proto = grpc.loadPackageDefinition(
 /*
  * Joining the server with our user array.
  */
-
 let users = [];
 
 function JoinServer(call, callback) {
   users.push(call);
-  broadcastChat({ username: "Server", textMessage: "New user joined !" });
+  broadcastChat({
+    username: "[Server]",
+    textMessage: `New user has just joined the chatbox.`
+  });
 }
 
 /*
  * Reception of a message from the client & broadcast the chat
  */
-
 function SendMessage(call, callback) {
   broadcastChat(call.request);
 }
@@ -49,7 +49,6 @@ function broadcastChat(message) {
 /*
  * Start the gRPC Server
  */
-
 function startGrpcServer() {
   server.addService(proto.chatbox.Chat.service, {
     JoinServer: JoinServer,

@@ -2,7 +2,6 @@
  * The connect file that user uses to connect to the server
  * We load protos, define functions and start the client
  */
-
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 
@@ -24,7 +23,6 @@ let username;
 /*
  * Initialize the client
  */
-
 let client = new proto.chatbox.Chat(
   SERVER_ADDRESS,
   grpc.credentials.createInsecure()

@@ -1,7 +1,6 @@
 /* A user will be able to JoinServer, SendMessage.
  * The Message will have a username and a textmessage
  */
-
 syntax = "proto3";
 package chatbox;
  
