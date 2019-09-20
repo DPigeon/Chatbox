@@ -1,0 +1,21 @@
+/* A user will be able to JoinServer, SendMessage.
+ * The Message will have a username and a textmessage
+ */
+
+syntax = "proto3";
+ 
+package chatbox;
+ 
+service Chat {
+    rpc JoinServer(stream Message) returns (stream Message) {
+
+    }
+    rpc SendMessage(Message) returns (Message) {
+
+    }
+}
+ 
+message Message {
+    string username = 1;
+    string textMessage = 2;
+}
