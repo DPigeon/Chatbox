@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/DPigeon/Chatbox/issues"
   },
-  "homepage": "https://github.com/DPigeon/Chatbox#readme"
+  "homepage": "https://github.com/DPigeon/Chatbox#readme",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.2",
+    "grpc": "^1.23.3"
+  }
 }
