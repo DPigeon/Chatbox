@@ -3,7 +3,6 @@
  */
 
 syntax = "proto3";
- 
 package chatbox;
  
 service Chat {

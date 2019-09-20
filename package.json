@@ -2,7 +2,7 @@
   "name": "chatbox",
   "version": "1.0.0",
   "description": "A small chatbox made with gRPC and NodeJS.",
-  "main": "server.js",
+  "main": "Server/Entrypoint.js",
   "scripts": {
     "test": "npm test"
   },
