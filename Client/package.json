@@ -1,0 +1,26 @@
+{
+  "name": "chatboxclient",
+  "version": "1.0.0",
+  "description": "The client for the chatbox.",
+  "main": "Connect.js",
+  "scripts": {
+    "dev": "SET NODE_ENV=development && node Connect.js",
+    "start": "SET NODE_ENV=production && node Connect.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DPigeon/Chatbox.git"
+  },
+  "keywords": [
+    "client",
+    "chatbox",
+    "connection"
+  ],
+  "author": "DPigeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DPigeon/Chatbox/issues"
+  },
+  "homepage": "https://github.com/DPigeon/Chatbox#readme"
+}

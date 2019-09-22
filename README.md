@@ -10,7 +10,7 @@ Clone the repository with Git:
 git clone https://github.com/DPigeon/Chatbox
 ```
 
-To build the Docker container, simply run:
+To build the server Docker container, simply this command in the main directory:
 
 ```
 docker build -t Chatbox .

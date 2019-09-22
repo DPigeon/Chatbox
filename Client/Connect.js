@@ -5,8 +5,8 @@
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 
-const { SERVER_URL, SERVER_PORT } = require("../env");
-const SERVER_ADDRESS = `${SERVER_URL}:${SERVER_PORT}`;
+const { CLIENT_URL, SERVER_PORT } = require("./Env");
+const SERVER_ADDRESS = `${CLIENT_URL}:${SERVER_PORT}`;
 
 var proto = grpc.loadPackageDefinition(
   protoLoader.loadSync("Protos/Chatbox.proto", {
@@ -52,9 +52,10 @@ function startChat() {
 const { emitCommands } = require("./LinuxCommands");
 
 function onData(message) {
-  if (message.username == username) return;
+  if (message.username == username)
+    console.log(`${username}: ${message.textMessage}`);
+  else console.log(`${message.username}: ${message.textMessage}`);
   emitCommands(message);
-  console.log(`${message.username}: ${message.textMessage}`);
 }
 
 /*

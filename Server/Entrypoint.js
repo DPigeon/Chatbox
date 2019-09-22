@@ -5,7 +5,7 @@
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 
-const { SERVER_URL, SERVER_PORT } = require("../env");
+const { SERVER_URL, SERVER_PORT } = require("../Env");
 const SERVER_ADDRESS = `${SERVER_URL}:${SERVER_PORT}`;
 
 const server = new grpc.Server();
