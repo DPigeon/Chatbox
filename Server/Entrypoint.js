@@ -5,13 +5,13 @@
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 
-const { SERVER_URL, SERVER_PORT } = require("../Env");
+const { SERVER_URL, SERVER_PORT } = require("./Env");
 const SERVER_ADDRESS = `${SERVER_URL}:${SERVER_PORT}`;
 
 const server = new grpc.Server();
 
 let proto = grpc.loadPackageDefinition(
-  protoLoader.loadSync("Protos/Chatbox.proto", {
+  protoLoader.loadSync("../Protos/Chatbox.proto", {
     keepCase: true,
     longs: String,
     enums: String,

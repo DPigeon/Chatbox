@@ -1,0 +1,29 @@
+{
+  "name": "chatbox",
+  "version": "1.0.0",
+  "description": "A small chatbox made with gRPC and NodeJS.",
+  "main": "Entrypoint.js",
+  "scripts": {
+    "start": "node App.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DPigeon/Chatbox.git"
+  },
+  "keywords": [
+    "chatbox",
+    "grpc",
+    "nodejs"
+  ],
+  "author": "DPigeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DPigeon/Chatbox/issues"
+  },
+  "homepage": "https://github.com/DPigeon/Chatbox#readme",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.2",
+    "grpc": "^1.23.3"
+  }
+}
