@@ -9,7 +9,7 @@ const { CLIENT_URL, SERVER_PORT } = require("./Env");
 const SERVER_ADDRESS = `${CLIENT_URL}:${SERVER_PORT}`;
 
 var proto = grpc.loadPackageDefinition(
-  protoLoader.loadSync("Protos/Chatbox.proto", {
+  protoLoader.loadSync("../Protos/Chatbox.proto", {
     keepCase: true,
     longs: String,
     enums: String,
@@ -70,3 +70,5 @@ reader.question("What is your username ? ", answer => {
   username = answer;
   startChat();
 });
+
+console.log(process.env.NODE_ENV);
